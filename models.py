@@ -26,11 +26,9 @@ class C3D(nn.Module):
         # to reduce the frame size
         self.reduce_size2 = nn.Conv3d(in_channels=32, out_channels=32, stride=2, kernel_size=3)
 
-        self.fc = nn.Sequential(nn.Linear(32 * 3 * 14 * 19, 256),
+        self.fc = nn.Sequential(nn.Linear(32 * 3 * 14 * 19, 512),
                                 nn.Dropout(.2),
-                                nn.Linear(256, 64),
-                                nn.Dropout(.2),
-                                nn.Linear(64, 3),
+                                nn.Linear(512, 101),
                                 nn.Softmax())
         # self.fc1 = nn.Linear(16 * 5 * 5, 120)
         # self.fc2 = nn.Linear(120, 84)

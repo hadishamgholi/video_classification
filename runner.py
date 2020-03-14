@@ -51,12 +51,11 @@ def validation():
 def run():
     train_losses, val_losses = [], []
     for e in range(con.epochs):
-        print(f'training epoch {e} ... ')
         t_loss = train()
         v_loss = validation()
-        print(f'validating ...')
         train_losses.append(t_loss)
         val_losses.append(v_loss)
+        print(f'train loss: {t_loss}, validation loss: {v_loss}')
 
 
 # if __name__ == '__main__':
