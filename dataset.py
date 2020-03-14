@@ -26,4 +26,6 @@ class MyDataset(Dataset):
         cap.release()
         x = torch.stack(x, dim=0)
         y = utils.get_label_from_filename(item_path)
+        set_trace()
+        y = utils.encode_label(y)
         return x, y
